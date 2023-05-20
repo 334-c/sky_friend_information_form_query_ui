@@ -3,7 +3,7 @@ import enLocale from './en.js';
 import zhLocale from './zh.js';
 
 const localLang = navigator.language.split('-')[0];
-const storageLang = window.localStorage.getItem('locale')?.split('"')[1].split('"')[0].toLocaleLowerCase() || 'en';
+const storageLang = window.localStorage.getItem('locale')?.split('"')[1].split('"')[0].toLocaleLowerCase() || 'zh';
 const c = (storageLang.toLocaleLowerCase() !== 'zh' && storageLang.toLocaleLowerCase() !== 'en') ? 'en' : storageLang;
 
 const i18n = createI18n({
