@@ -1,0 +1,10 @@
+export class QueryBody {
+    words: string
+    sentences: Array<String>
+    sentencesText: string
+}
+export class Page {
+    PageNum: number = 1
+    pageSize: number = 10
+    total: number = 0
+}
