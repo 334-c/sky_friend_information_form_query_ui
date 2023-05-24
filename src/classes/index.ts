@@ -4,7 +4,7 @@ export class QueryBody {
     sentencesText: string
 }
 export class Page {
-    PageNum: number = 1
+    pageNum: number = 1
     pageSize: number = 10
     total: number = 0
 }

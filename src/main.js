@@ -1,4 +1,4 @@
-import { createApp } from 'vue'
+import { createApp, ref, watch } from 'vue'
 import './style.css'
 import App from './App.vue'
 import ElementPlus from 'element-plus'
@@ -9,6 +9,15 @@ import i18n from './lang/index'
 // import 'element-plus/theme-chalk/dark/css-vars.css'
 // import './styles/dark/css-vars.css'
 
-createApp(App).use(ElementPlus, {
+const app = createApp(App).use(ElementPlus, {
     locale: zhCn
-}).use(i18n).use(router).mount('#app')
+}).use(i18n).use(router);
+const title = ref("加载中")
+
+// 全局动态标题
+app.provide("title", title)
+watch(title, (newValue, oldValue) => {
+    document.title = newValue;
+});
+
+app.mount('#app')
