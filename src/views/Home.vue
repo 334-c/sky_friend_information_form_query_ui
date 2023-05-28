@@ -34,7 +34,9 @@
             <el-table :data="tableData" stripe style="width: 100%">
                 <el-table-column prop="wantType" :label="$t('e.寻找类型')">
                     <template #default="scope">
-                        {{ filters.wantType(scope.row.wantType) }}
+                        <div @click="showText(scope.row.wantType,'寻找类型')" class="miniTxet">
+                            {{ filters.wantType(scope.row.wantType) }}
+                        </div>
                     </template>
                 </el-table-column>
                 <el-table-column prop="request" :label="$t('e.想要找这样的人')" >
@@ -59,7 +61,7 @@
                 </el-table-column>
                 <el-table-column prop="contact" :label="$t('e.联系方式')" >
                     <template #default="scope">
-                        <div @click="showText(scope.row.contact, '光之子自述')" class="miniTxet">
+                        <div @click="showText(scope.row.contact, '联系方式')" class="miniTxet">
                             {{ filters.contact(scope.row.contact) }}
                         </div>
                     </template>
